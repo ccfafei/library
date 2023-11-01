@@ -1,0 +1,74 @@
+@extends('weChat.layout.app')
+@section('title', $title_name)
+@section('css')
+
+@endsection
+
+@section('body')
+	<div class="mui-content">
+		<style>
+			.mui-content{
+				margin-top:15px;
+				margin-bottom: 20px;
+				padding-left: 10px;
+			}
+		</style>
+		<p>
+			1.一个会员卡可以借几本书? <br>
+			答:最多借一本,当申请还书后可借第二本。<br>
+		</p>
+
+		<p>
+			2.如何注册会员? <br>
+			答:先关注微信公众号，在个人中心完成资料后购买会员。<br>
+		</p>
+
+		<p>
+			3.借的书坏了怎么办? <br>
+			答:先和客服联系，客服根据损坏情况进行处理。<br>
+		</p>
+
+
+		<p>
+			4.借的书丢了怎么办? <br>
+			答:先联系客服挂失，再沟通赔偿情况。<br>
+		</p>
+
+		<p>
+			5.我家有两个小孩，怎么办? <br>
+			答:这种情况可以换家庭成员中的微信进行关注，注册。<br>
+		</p>
+
+	</div>
+	<div class="footer">
+		<div style="margin-bottom: 5rem;text-align: center;height: 3.125rem;width: 100%;color: #555555;font-size: 0.75rem;">
+			<a href="{{url('/wechat/book/more')}}" class="mui-btn" style="color: #999793;font-size: 12px;">探索更多</a>
+		</div>
+		<nav class="mui-bar mui-bar-tab" style="height: 60px;">
+			<a class="mui-tab-item mui-active" href="{{url('/wechat/index')}}" >
+				<span class="mui-icon icon-home" style="background: url('/images/icon_index.png') no-repeat;background-size: 100% 100%;width: 30px;height: 30px;"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item" href="{{url('/wechat/search')}}">
+				<span class="mui-icon icon-search" style="background: url('/images/icon_search_no.png') no-repeat;background-size: 100% 100%;width: 30px;height: 30px;"></span>
+				<span class="mui-tab-label">寻书</span>
+			</a>
+			<a class="mui-tab-item" href="{{url('/wechat/history/index')}}">
+				<span class="mui-icon icon-refresh" style="background: url('/images/icon_history_no.png') no-repeat;background-size: 100% 100%;width: 30px;height: 30px;"></span>
+				<span class="mui-tab-label">历史</span>
+			</a>
+			<a class="mui-tab-item" href="{{url('/wechat/user')}}">
+				<span class="mui-icon icon-contact" style="background: url('/images/icon_ucenter_no.png') no-repeat;background-size: 100% 100%;width: 30px;height: 30px;"></span>
+				<span class="mui-tab-label">我的</span>
+			</a>
+		</nav>
+	</div>
+@endsection
+
+@section('js')
+	<script type="text/javascript">
+        mui('.mui-bar-tab').on('tap','a',function(){
+            document.location.href=this.href;
+        });
+	</script>
+@endsection

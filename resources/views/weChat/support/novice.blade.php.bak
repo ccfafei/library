@@ -1,0 +1,74 @@
+@extends('weChat.layout.app')
+@section('title', $title_name)
+@section('css')
+<style>
+	.mui-content{
+		margin-top:15px;
+		margin-bottom: 20px;
+		padding-left: 10px;
+		text-indent: 20px;
+	}
+</style>
+@endsection
+
+@section('body')
+	<div class="mui-content">
+		<p>
+			童悦儿童在线图书馆是一家智慧启迪的新型图书馆，本馆目前有多种类型的图书，不管陪读，还是教学。我们应有尽有。为了保障儿童的阅读权利，维持良好的借阅环境，请家长阅读以下条款：
+	        <br/>
+		</p>
+
+		<p>1. 配送时间： 全天：8:00-18:00 <br/></p>
+		<p>2. 本图书馆提供3-12岁图书的在线借阅，家长足不出户可方便借阅到小朋友喜欢的图书，图书绿色环保，在知识共享时代节约不少开支；</p>
+		<p>3. 借阅需要在线办理会员，会员限本人使用，请注意网络安全，不要向他人透露账号和密码。具体请参照会员条款。</p>
+
+		<p>4. 用户发起第一本还书后允许借阅第二本书；第一本还书未完成时，第二本可正常还书，但无法借阅第三本书；</p>
+
+		<p>5. 发起借阅后30分钟内支持用户自行取消,派送中如果需要更换或者取消请联系客服,如遇书籍库存不足，可电话协调更换借阅选择；</p>
+
+		<p>6. 读者须爱护图书，不可擅动封里的条形码，如损毁严重影响再次借阅，需按系统原价赔偿；</p>
+
+		<p>7. 为尊重读者个人权益，请不要私自拍摄公众影像；</p>
+
+		<p>8. 配送和回收都由工作人员统一管理，基本在园内进行；</p>
+
+		<p>9. 如果图书遗失请联系客服进行处理，以免影响借阅。<br></p>
+
+		<p>以上须知请广大家长和小读者知悉并遵守，尊重、配合。</p>
+
+		<p>咨询电话：{{config('params.service_phone')}}<br/></p>
+
+	</div>
+	<div class="footer">
+		<div style="margin-bottom: 5rem;text-align: center;height: 3.125rem;width: 100%;color: #555555;font-size: 0.75rem;">
+			<a href="{{url('/wechat/book/more')}}" class="mui-btn" style="color: #999793;font-size: 12px;">探索更多</a>
+		</div>
+		<nav class="mui-bar mui-bar-tab" style="height: 60px;">
+			<a class="mui-tab-item mui-active" href="{{url('/wechat/index')}}" >
+				<span class="mui-icon icon-home" style="background: url('/images/icon_index.png') no-repeat;background-size: 100% 100%;width: 30px;height: 30px;"></span>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item" href="{{url('/wechat/search')}}">
+				<span class="mui-icon icon-search" style="background: url('/images/icon_search_no.png') no-repeat;background-size: 100% 100%;width: 30px;height: 30px;"></span>
+				<span class="mui-tab-label">寻书</span>
+			</a>
+			<a class="mui-tab-item" href="{{url('/wechat/history/index')}}">
+				<span class="mui-icon icon-refresh" style="background: url('/images/icon_history_no.png') no-repeat;background-size: 100% 100%;width: 30px;height: 30px;"></span>
+				<span class="mui-tab-label">历史</span>
+			</a>
+			<a class="mui-tab-item" href="{{url('/wechat/user')}}">
+				<span class="mui-icon icon-contact" style="background: url('/images/icon_ucenter_no.png') no-repeat;background-size: 100% 100%;width: 30px;height: 30px;"></span>
+				<span class="mui-tab-label">我的</span>
+			</a>
+		</nav>
+	</div>
+@endsection
+
+@section('js')
+	<script type="text/javascript">
+        mui('.mui-bar-tab').on('tap','a',function(){
+            document.location.href=this.href;
+
+        });
+	</script>
+@endsection
